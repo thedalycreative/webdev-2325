@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Equinim Intake • Class Hub</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <style>
+    :root {
+      --brand-dark: #0f172a;
+      --brand: #1e293b;
+      --brand-acc: #16a34a;
+      --brand-soft: #e2e8f0;
+    }
+
+    body {
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+    }
+
+    .hero {
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(22, 163, 74, .12), transparent),
+        linear-gradient(180deg, #fff, #f8fafc 60%);
+    }
+
+    .badge-accent {
+      background: var(--brand-acc);
+    }
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 .75rem 1.25rem rgba(0, 0, 0, .08);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 992px) {
+      .sticky-lg-top-90 {
+        position: sticky;
+        top: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"><i class="bi bi-mortarboard-fill text-success me-2"></i>Equinim Intake
+        Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lessons">Lesson Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="overview" class="hero py-5 border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="badge badge-accent text-white">Semester Hub</span>
+          <h1 class="display-5 fw-bold mt-3">Hey Warriors</h1>
+          <h2>Welcome to your Class Hub</h2>
+          <p class="lead text-secondary">Everything for our intake in one place: schedules, Zoom, resources, and quick
+            links for day‑to‑day learning.</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a href="#links" class="btn btn-success"><i class="bi bi-lightning-charge-fill me-2"></i>Jump to Quick
+              Links</a>
+            <a href="#schedule" class="btn btn-outline-success"><i class="bi bi-calendar-week me-2"></i>View
+              Schedule</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card shadow-sm border-0 reveal">
+            <div class="card-body">
+              <h5 class="card-title mb-3"><i class="bi bi-info-circle-fill text-success me-2"></i>Course Overview</h5>
+              <ul class="list-unstyled small mb-0">
+                <li><i class="bi bi-check2-circle text-success me-2"></i>HTML, CSS, Bootstrap fundamentals</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Git/GitHub workflow & collaboration</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>JavaScript essentials & DOM basics</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Back‑end intro (Node/Express) & APIs</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Deployment & portfolio readiness</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LESSON NOTES -->
+  <section id="lessons" class="py-5 bg-light border-bottom">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2 class="h3 fw-bold mb-0">Lesson Notes</h2>
+        <span class="badge bg-success-subtle text-success fw-semibold">Updated weekly</span>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 border-0 shadow-sm link-card reveal">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-lightbulb-fill text-success me-2"></i>Lesson 1 • Foundations</h5>
+              <ul class="list-unstyled small mt-3 mb-0">
+                <li><i class="bi bi-check2 text-success me-2"></i>VS Code install, folder structure, and Live Server
+                  run-through</li>
+                <li><i class="bi bi-check2 text-success me-2"></i>HTML boilerplate anatomy (doctype, head, body)</li>
+                <li><i class="bi bi-check2 text-success me-2"></i>Core tags: headings, paragraphs, lists, images, text
+                  formatting</li>
+                <li><i class="bi bi-check2 text-success me-2"></i>Why clean indentation + Prettier keep GitHub diffs
+                  readable</li>
+                <li><i class="bi bi-check2 text-success me-2"></i>Deployment preview using Live Server “Go Live”</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 border-0 shadow-sm link-card reveal">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-journal-text text-success me-2"></i>Lesson 2 • Semantic Layout</h5>
+              <ul class="list-unstyled small mt-3">
+                <li><i class="bi bi-check2 text-success me-2"></i>Built full page structure with header, main, footer,
+                  sections</li>
+                <li><i class="bi bi-check2 text-success me-2"></i>Reinforced accessible navigation and `alt` text best
+                  practices</li>
+                <li><i class="bi bi-check2 text-success me-2"></i>Students recreated demo layout + added inline comments
+                  explaining intent</li>
+              </ul>
+              <div class="alert alert-success bg-success-subtle text-success-emphasis border-0 small mb-0">
+                <i class="bi bi-link-45deg me-1"></i>
+                Practice challenge: <a href="https://www.w3schools.com/html/html_exercises.asp"
+                  target="_blank">W3Schools
+                  HTML Exercises</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="py-5 bg-white border-top border-bottom">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="h3 fw-bold mb-0">Class Schedule</h2>
+        <a href="Equinim_25.23_MonWed_Recurring.ics" download class="btn btn-outline-secondary btn-sm"><i
+            class="bi bi-calendar-plus me-1"></i>Add recurring classes (iCal)</a>
+      </div>
+      <p class="text-secondary small mb-4">Weekly recurring classes: Mondays & Wednesdays, 5:30–8:30pm AWST. <br> No
+        classes during term breaks (20 Dec 2025–1 Feb 2026) or WA public holidays.</p>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section id="links" class="py-5">
+    <div class="container">
+      <h2 class="h3 fw-bold mb-4">Useful Links</h2>
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm link-card reveal">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-door-open-fill text-success me-2"></i>Class Access</h5>
+              <div class="list-group list-group-flush mt-3">
+                <a class="list-group-item list-group-item-action"
+                  href="https://zoom.us/j/94002280314?pwd=yVBB9Sd6XnMj7cttIVj6qDBrSytNqa.1" target="_blank"><i
+                    class="bi bi-camera-video-fill me-2"></i>Zoom (Live Class)</a>
+                <a class="list-group-item list-group-item-action" href="https://study.equinimcollege.com/login"
+                  target="_blank"><i class="bi bi-person-badge-fill me-2"></i>Equinim Student Hub</a>
+                <a class="list-group-item list-group-item-action" href="https://github.com/" target="_blank"><i
+                    class="bi bi-github me-2"></i>GitHub</a>
+                <a class="list-group-item list-group-item-action" href="https://colab.research.google.com/"
+                  target="_blank"><i class="bi bi-cpu-fill me-2"></i>Google Colab</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm link-card reveal">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-journal-code text-success me-2"></i>Learning Resources</h5>
+              <div class="list-group list-group-flush mt-3">
+                <a class="list-group-item list-group-item-action" href="https://www.w3schools.com/" target="_blank"><i
+                    class="bi bi-book-half me-2"></i>W3Schools</a>
+                <a class="list-group-item list-group-item-action" href="https://www.w3.org/WAI/standards-guidelines/"
+                  target="_blank"><i class="bi bi-universal-access-circle me-2"></i>W3 Accessibility Standards</a>
+                <a class="list-group-item list-group-item-action" href="https://getbootstrap.com/" target="_blank"><i
+                    class="bi bi-bootstrap-fill me-2"></i>GetBootstrap Docs</a>
+                <a class="list-group-item list-group-item-action" href="https://www.codecademy.com/" target="_blank"><i
+                    class="bi bi-collection-play-fill me-2"></i>Codecademy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm link-card reveal">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-tools text-success me-2"></i>Tools & Assets</h5>
+              <div class="list-group list-group-flush mt-3">
+                <a class="list-group-item list-group-item-action" href="https://www.flaticon.com/" target="_blank"><i
+                    class="bi bi-shapes me-2"></i>Flaticon</a>
+                <a class="list-group-item list-group-item-action" href="https://fonts.google.com/" target="_blank"><i
+                    class="bi bi-type me-2"></i>Google Fonts</a>
+                <a class="list-group-item list-group-item-action" href="https://fonts.google.com/icons"
+                  target="_blank"><i class="bi bi-grid-3x3-gap-fill me-2"></i>Google (Material) Icons</a>
+                <a class="list-group-item list-group-item-action" href="https://icons.getbootstrap.com/"
+                  target="_blank"><i class="bi bi-bootstrap me-2"></i>Bootstrap Icons</a>
+                <a class="list-group-item list-group-item-action" href="https://www.figma.com/" target="_blank"><i
+                    class="bi bi-bezier2 me-2"></i>Figma</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm link-card reveal">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-code-square text-success me-2"></i>VS Code Extensions</h5>
+              <div class="list-group list-group-flush mt-3">
+                <a class="list-group-item list-group-item-action"
+                  href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank"><i
+                    class="bi bi-magic me-2"></i>Prettier (Code Formatter)</a>
+                <a class="list-group-item list-group-item-action"
+                  href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank"><i
+                    class="bi bi-broadcast-pin me-2"></i>Live Server (Go Live)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5 bg-light border-top">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="h3 fw-bold mb-3">Contact</h2>
+          <p class="text-secondary">Questions, extensions, or tech help—reach out early.</p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-envelope-fill text-success me-2"></i>Email: <a
+                href="mailto:tim@equinimcollege.com">tim@equinimcollege.com</a></li>
+            <li><i class="bi bi-telephone-fill text-success me-2"></i>Mobile: <a href="tel:+61414265050">0414 265
+                050</a></li>
+            <li><i class="bi bi-geo-alt-fill text-success me-2"></i>Campus: Equinim College</li>
+            <li><i class="bi bi-people-fill text-success me-2"></i>College (training/course): <a
+                href="mailto:trainer@equinimcollege.com">trainer@equinimcollege.com</a></li>
+            <li><i class="bi bi-envelope-open-fill text-success me-2"></i>Attendance/deferrals: <a
+                href="mailto:team@equinimcollege.com">team@equinimcollege.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 bg-white border-top">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+      <div class="small text-secondary">© <span id="year"></span> Equinim Intake Hub • Built with Bootstrap</div>
+      <div class="d-flex gap-3">
+        <a class="text-decoration-none" href="#overview">Overview</a>
+        <a class="text-decoration-none" href="#schedule">Schedule</a>
+        <a class="text-decoration-none" href="#links">Links</a>
+        <a class="text-decoration-none" href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="btn btn-success rounded-circle position-fixed"
+    style="right:16px; bottom:16px; width:48px; height:48px; display:flex; align-items:center; justify-content:center;"><i
+      class="bi bi-arrow-up-short fs-3"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }) }, { threshold: 0.18 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+
+</html>
