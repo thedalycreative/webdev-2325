@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Preventative QA Checklist • Equinim Intake</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <style>
+        :root {
+            --brand-dark: #0f172a;
+            --brand: #1e293b;
+            --brand-acc: #16a34a;
+            --brand-soft: #e2e8f0;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+        }
+
+        .navbar {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+        }
+
+        .checklist-section {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+        }
+
+        .checklist-section h3 {
+            color: var(--brand-acc);
+            border-bottom: 2px solid var(--brand-acc);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--brand-acc);
+            border-color: var(--brand-acc);
+        }
+
+        .badge-custom {
+            background-color: var(--brand-acc);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🚀 Preventative QA Checklist</h1>
+
+        <p>A structured approach to ensure compliance, usability, and speed before launch. Tick the boxes as you conquer
+            each step!</p>
+
+        <div class="checklist-group">
+            <h2>A. Functional Testing (Does the bloody thing work?)</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-a1">
+                <label for="qa-a1">Forms & Submissions: All form fields validate and submit data correctly.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-a2">
+                <label for="qa-a2">Links & Navigation: All internal and external links are active and route
+                    correctly.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-a3">
+                <label for="qa-a3">User Authentication: Login, registration, and password recovery function
+                    securely.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-a4">
+                <label for="qa-a4">Data Integrity: Data is stored, retrieved, and displayed accurately.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-a5">
+                <label for="qa-a5">Error Handling: Appropriate, user-friendly error messages display for failures (e.g.,
+                    404s, invalid inputs).</label>
+            </div>
+        </div>
+
+        <div class="checklist-group">
+            <h2>B. Usability & UX Testing (Is it easy for users to use?)</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-b1">
+                <label for="qa-b1">Intuitive Flow: User journey is logical and steps are minimised.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-b2">
+                <label for="qa-b2">Visual Consistency: Design elements (fonts, colours, spacing) are consistent across
+                    the site.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-b3">
+                <label for="qa-b3">Load State: Loading indicators are appropriate; no excessive blank screens.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-b4">
+                <label for="qa-b4">Feedback Mechanisms: Interactive elements (like buttons) provide clear visual
+                    feedback (e.g., hovering, active states).</label>
+            </div>
+        </div>
+
+        <div class="checklist-group">
+            <h2>C. Accessibility Testing (Can everyone use it?)</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-c1">
+                <label for="qa-c1">WCAG Conformance: The site meets WCAG 2.2 AA standards (manual/automated
+                    check).</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-c2">
+                <label for="qa-c2">Keyboard Navigation: All interactive elements are accessible via keyboard (Tab key
+                    check).</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-c3">
+                <label for="qa-c3">Focus State: Visible focus indicators for interactive elements (no "disappearing"
+                    focus).</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-c4">
+                <label for="qa-c4">Semantic HTML: Proper use of HTML5 elements (nav, header, footer, button,
+                    etc.).</label>
+            </div>
+            <h3>Images & Media:</h3>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-c5a">
+                <label for="qa-c5a">All functional images have descriptive alt text; decorative images have empty alt
+                    text.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-c5b">
+                <label for="qa-c5b">Videos have accurate captions and/or transcripts.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-c6">
+                <label for="qa-c6">Colours & Contrast: Sufficient contrast ratios for all text and background
+                    elements.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-c7">
+                <label for="qa-c7">Text Sizing: Text can be resized up to 200% without loss of content or
+                    functionality.</label>
+            </div>
+        </div>
+
+        <div class="checklist-group">
+            <h2>D. Performance & Security Testing (Is it fast and safe?)</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-d1">
+                <label for="qa-d1">Load Times: Pages load within acceptable time frames (e.g., under 3 seconds).</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-d2">
+                <label for="qa-d2">Image Optimisation: Images are correctly compressed and sized for web
+                    performance.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-d3">
+                <label for="qa-d3">Mobile Network Test: Performance is acceptable on simulated or real 3G/4G
+                    networks.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-d4">
+                <label for="qa-d4">Security (Basic Checks): Forms/logins use HTTPS; no obvious vulnerabilities (e.g.,
+                    unescaped inputs for XSS).</label>
+            </div>
+        </div>
+
+        <div class="checklist-group">
+            <h2>E. Compatibility Testing (Does it work everywhere?)</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-e1">
+                <label for="qa-e1">Browser Compatibility: Site functions correctly on major browsers (Chrome, Firefox,
+                    Safari, Edge).</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-e2">
+                <label for="qa-e2">Mobile Responsiveness: Site is fully responsive and functional on various screen
+                    sizes (mobile, tablet, desktop).</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-e3">
+                <label for="qa-e3">Device Orientation: Site works correctly in both portrait and landscape modes on
+                    mobile devices.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="qa-e4">
+                <label for="qa-e4">Operating Systems: Site functions properly across different OS (Windows, macOS, iOS,
+                    Android).</label>
+            </div>
+        </div>
+
+        <hr class="meta-section">
+
+        <div class="meta-section">
+            <h2>🤝 Client and Colleague Management: Don't Panic :)</h2>
+            <p>Your procedure for communicating issues—ensuring clear, professional, and compliant client support.</p>
+
+            <div class="checklist-group">
+                <h3>Initial Communication</h3>
+                <div class="checklist-item">
+                    <input type="checkbox" id="comm-1a">
+                    <label for="comm-1a">Email clients/colleagues with a clear summary of the QA findings.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="comm-1b">
+                    <label for="comm-1b">Include screenshots or screen recordings of any issues found.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="comm-1c">
+                    <label for="comm-1c">Call out any critical issues that need immediate attention.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="comm-1d">
+                    <label for="comm-1d">Offer to schedule a follow-up meeting to discuss fixes and next steps.</label>
+                </div>
+            </div>
+
+            <div class="checklist-group">
+                <h3>Issue Reporting Steps</h3>
+                <ol class="step-list">
+                    <li>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step-1">
+                            <label for="step-1">1. Identify The Issue(s)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step-2">
+                            <label for="step-2">2. Reproduce The Issue(s) (Confirm it happens consistently)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step-3">
+                            <label for="step-3">3. Screenshot/Record The Issue(s) (Provide visual proof)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step-4">
+                            <label for="step-4">4. Offer A Solution (A clear path to resolution)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step-5a">
+                            <label for="step-5a">5. Communicate Clearly and Professionally: Use clear, non-technical
+                                language when explaining issues to clients/colleagues.</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step-5b">
+                            <label for="step-5b">Be concise and to the point, avoiding unnecessary jargon.</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step-6">
+                            <label for="step-6">6. Follow Up: After sending the initial communication, follow up to
+                                ensure the client/colleague received the information and action has been taken.</label>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
