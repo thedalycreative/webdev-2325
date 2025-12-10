@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Client Problems: Katie & Marvin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #16a34a;
+            --secondary-color: #f8f9fa;
+            --border-color: #dee2e6;
+            --success-color: #28a745;
+            --warning-bg: #fff9e6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container-main {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #495057;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            font-weight: 600;
+        }
+
+        h2:first-of-type {
+            margin-top: 30px;
+        }
+
+        .intro-text {
+            background: #e7f5ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .case-description {
+            background: var(--secondary-color);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            border-left: 4px solid #6c757d;
+        }
+
+        .question-block {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--secondary-color);
+        }
+
+        .question-text {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            display: block;
+            font-size: 1.05em;
+        }
+
+        .answer-box {
+            position: relative;
+            background: #fff;
+            border: 1px dashed var(--border-color);
+            padding: 15px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .answer-box.no-copy {
+            background: var(--warning-bg);
+            border: 2px solid #ffc107;
+        }
+
+        .no-copy-note {
+            color: #856404;
+            font-size: 0.85em;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        .copy-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 12px;
+            display: inline-block;
+            transition: all 0.2s;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .copy-btn:hover {
+            background-color: #15803d;
+            transform: translateY(-1px);
+        }
+
+        .copy-btn:active {
+            background-color: var(--success-color);
+        }
+
+        footer {
+            background: #212529;
+            color: white;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        footer h6 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            background-color: #15803d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="bi bi-arrow-left-circle-fill text-success me-2"></i>Back to Hub
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-main">
+        <h1 id="top">Manage Client Problems: Katie & Marvin</h1>
+        
+        <!-- Quick Navigation -->
+        <div class="alert alert-info border-0 mb-4">
+            <h6 class="mb-3"><i class="bi bi-compass me-2"></i>Quick Navigation</h6>
+            <div class="d-flex flex-wrap gap-3">
+                <a href="#marvin" class="btn btn-sm btn-outline-primary"><i class="bi bi-flower1 me-1"></i>Marvin's Case Study</a>
+                <a href="#katie" class="btn btn-sm btn-outline-primary"><i class="bi bi-film me-1"></i>Katie's Case Study</a>
+            </div>
+        </div>
+        
+        <div class="intro-text">
+            <p class="mb-2"><strong><i class="bi bi-exclamation-circle me-2"></i>Important:</strong> These are sample answers to help guide your responses. You must write your answers <strong>in your own words</strong> to demonstrate your understanding of the assessment requirements.</p>
+            <p class="mb-0"><strong><i class="bi bi-lightbulb me-2"></i>Tip:</strong> Use the "Copy Answer" buttons for quick reference, but remember to personalize and adapt the content to reflect your own analysis and communication style.</p>
+        </div>
+
+        <hr class="my-5">
+
+        <h2 id="marvin"><i class="bi bi-flower1 me-2"></i>Case Study 1: Marvin's Flower Delivery (Broken Links)</h2>
+        
+        <div class="case-description">
+            <p class="mb-2"><strong>Problem:</strong> Marvin's website navigation links aren't working in the navbar and footer, preventing customers from navigating the site.</p>
+            <p class="mb-0"><strong>Technical Issue:</strong> The HTML code contains placeholder '#' symbols in the href attributes instead of actual page links.</p>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q1: Diagnose the problem.</span>
+            <div class="answer-box" id="q1-answer">Marvin's navigation links aren't working - navbar and footer</div>
+            <button class="copy-btn" onclick="copyToClipboard('q1-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q2: Cause and analysis.</span>
+            <div class="answer-box" id="q2-answer">links in html code show placeholder '#'</div>
+            <button class="copy-btn" onclick="copyToClipboard('q2-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q3: Client's point of contact.</span>
+            <div class="answer-box" id="q3-answer">Call first - follow up with email.</div>
+            <button class="copy-btn" onclick="copyToClipboard('q3-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">
+Q4: Potential solutions and steps.</span>
+<div class="answer-box" id="q4-answer">1. Opened code for site in VS Code Studio 
+
+2. Identified Issue was Navbar and Footer links (# used in href)
+
+3. updated the hyperlink path
+option a: manually 
+option b: copy and paste method
+
+4. deployed / tested updated codes</div>
+            <button class="copy-btn" onclick="copyToClipboard('q4-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q5: Email to Marvin (Plan).</span>
+            <div class="answer-box" id="q5-answer">Hi Marvin, 
+
+Tim here from ICT Solutions. Hope you are well. Just wanted to update you regarding the issue with your website and the navigation links that weren't working.
+
+I have identified the issue and it appears that the html code for your navigation bar and footer do not link to anything. 
+
+I anticipate this to be resolved for you within the next 24 hours.
+
+Thank you for reaching out.
+
+-Tim</div> 
+            <button class="copy-btn" onclick="copyToClipboard('q5-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q6: Action and escalation procedures (SLA).</span>
+            <div class="answer-box" id="q6-answer">If an issue cannot be resolved within the agreed-upon timeframe, the following
+escalation procedure will be followed:
+• Level 1: Initial support team.
+• Level 2: Technical experts or supervisors.
+• Level 3: Senior management.</div>
+            <button class="copy-btn" onclick="copyToClipboard('q6-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q7: Activities performed.</span>
+            <div class="answer-box" id="q7-answer">-identified the issue with links - placeholder '#' still in href divs.
+-fixed issue by updating href from # to correct file path 
+-updated missing pages to error page</div>
+            <button class="copy-btn" onclick="copyToClipboard('q7-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q8: Resolution Outcome.</span>
+            <div class="answer-box" id="q8-answer">yes - pending customer confirmation 
+
+mostly - we need to confirm his choice for footer policy and proceedure links (requested documents from customer)</div>
+            <button class="copy-btn" onclick="copyToClipboard('q8-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q9: Future improvement.</span>
+            <div class="answer-box" id="q9-answer">-checklist for QA at deployment 
+-ticket system template 
+-feedback from customer</div>
+            <button class="copy-btn" onclick="copyToClipboard('q9-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q10: Email to Marvin (Feedback).</span>
+            <div class="answer-box" id="q10-answer">Hi Marvin,
+
+Thanks for reaching out to our tech support team.
+
+We believe that your issue is now resolved! 
+
+If you have the time we would love to hear your thoughts on how we did - i have included the link to our customer survey.
+
+www.marvinsfeedback.com
+
+thanks again! 
+
+Tim
+Customer Support Officer</div>
+            <button class="copy-btn" onclick="copyToClipboard('q10-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q11: Adjusted website example.</span>
+            <div class="answer-box no-copy" id="q11-answer">Update the code with the correct head tag data on all the pages.</div>
+            <p class="no-copy-note"><i class="bi bi-info-circle me-1"></i>Note: This answer requires you to submit actual code/website files. Do not copy this text.</p>
+        </div>
+
+        <div class="text-center my-5">
+            <a href="#top" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-up me-1"></i>Back to Top</a>
+        </div>
+
+        <hr class="my-5">
+
+        <h2 id="katie"><i class="bi bi-film me-2"></i>Case Study 2: Katie's Film Company (SEO Issues)</h2>
+        
+        <div class="case-description">
+            <p class="mb-2"><strong>Problem:</strong> Katie's website is not appearing in search engine results, and her business name displays incorrectly in the browser tab.</p>
+            <p class="mb-0"><strong>Technical Issue:</strong> The HTML <code>&lt;head&gt;</code> section is missing proper title and meta tags for SEO, causing poor search visibility and incorrect browser display.</p>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q1: Diagnose the problem.</span>
+            <div class="answer-box" id="q12-answer">Her website is not appearing in search engine results. Her business name is funny in the browser tab</div>
+            <button class="copy-btn" onclick="copyToClipboard('q12-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q2: Cause and analysis.</span>
+            <div class="answer-box" id="q13-answer">The &lt;head&gt; section of the HTML code for this site is incorrect.</div>
+            <button class="copy-btn" onclick="copyToClipboard('q13-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q3: Client's point of contact.</span>
+            <div class="answer-box" id="q14-answer">Email as outlined in SLA.</div>
+            <button class="copy-btn" onclick="copyToClipboard('q14-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q4: Potential solutions and steps.</span>
+            <div class="answer-box" id="q15-answer">1. Open the website folder in VS code
+2. Went to index.html, &lt;head&gt; section.
+3. Insert a correct &lt;title&gt; tag and add &lt;meta&gt; tags for SEO 
+4. Save and test to ensure it displays correctly.</div>
+            <button class="copy-btn" onclick="copyToClipboard('q15-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q5: Email to Katie (Plan).</span>
+            <div class="answer-box" id="q16-answer">Hi Katie,
+
+Thanks for reaching out. I've had a look at your website and noticed that the page is missing some important tags that help it show up in search engines and display your business name correctly.
+
+I'll be working on updating the site's coding to add your business name in the tab and improve the information that search engines use. I'll keep you updated with the changes and will test everything before going live.
+
+Let me know if you have any questions!
+
+Kind regards,
+Duke the dog.</div>
+            <button class="copy-btn" onclick="copyToClipboard('q16-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q6: Action and escalation procedures (SLA).</span>
+            <div class="answer-box" id="q16b-answer">ICT Support and Resolution Services will employ best efforts to resolve reported
+issues within the following timelines:
+• Severity 1 (Critical): [4] hours
+• Severity 2 (High): [12] hours
+• Severity 3 (Medium): 24 – 48 hours
+• Severity 4 (Low): 1 Week</div>
+            <button class="copy-btn" onclick="copyToClipboard('q16b-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q7: Activities performed.</span>
+            <div class="answer-box" id="q17-answer">I opened the HTML file in Visual Studio Code and checked the &lt;head&gt; section. I found that the &lt;title&gt; tag had symbols instead of a name. I updated it to include "Katie's Film Company" and added meta description and keyword tags to help with search visibility. Then I saved and tested the site.</div>
+            <button class="copy-btn" onclick="copyToClipboard('q17-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q8: Resolution Outcome.</span>
+            <div class="answer-box" id="q18-answer">Yes, the issue was resolved. Katie's business name now appears in the browser tab, and her website is starting to show up on Google search results.</div>
+            <button class="copy-btn" onclick="copyToClipboard('q18-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q9: Future improvement.</span>
+            <div class="answer-box" id="q19-answer">An improvement could be creating a checklist that includes SEO setup before launching any website. This would ensure clients always have the correct title and meta tags in place, which matches our policy on providing quality and consistent support.</div>
+            <button class="copy-btn" onclick="copyToClipboard('q19-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q10: Email to Katie (Feedback).</span>
+            <div class="answer-box" id="q20-answer">Subject: Quick Check-in and Feedback
+Hi Katie,
+Just following up to see how things are going with your website after the updates. I'd love to hear if everything is working well now and if the issue you had is fully resolved.
+If you have any feedback on the support I provided or ideas to improve the process, I'd be happy to hear it.
+Thanks again and I hope everything is going smoothly!
+Best regards, [Your Name]</div>
+            <button class="copy-btn" onclick="copyToClipboard('q20-answer', this)">Copy Answer</button>
+        </div>
+
+        <div class="question-block">
+            <span class="question-text">Q11: Adjusted website example.</span>
+            <div class="answer-box no-copy" id="q21-answer">You will need to update HTML file with the correct links in navbar and footer.</div>
+            <p class="no-copy-note"><i class="bi bi-info-circle me-1"></i>Note: This answer requires you to submit actual code/website files. Do not copy this text.</p>
+        </div>
+
+        <div class="text-center my-5">
+            <a href="#top" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-up me-1"></i>Back to Top</a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h6><i class="bi bi-mortarboard-fill me-2"></i>Module Information</h6>
+                    <p class="mb-1"><strong>Qualification:</strong> ICT50220 Diploma of Information Technology</p>
+                    <p class="mb-1"><strong>Subject:</strong> Working with Clients and Industry</p>
+                    <p class="mb-1"><strong>Module:</strong> Manage Client Problems</p>
+                    <p class="mb-0"><strong>Activity:</strong> Katie (Part A) & Marvin (Part B)</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="mb-0 text-white-50 small mt-3">© 2025 Equinim College</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="bi bi-arrow-up fs-5"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Back to Top button visibility
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        /**
+         * Copies the text content of a given element ID to the clipboard.
+         * Updates the button text temporarily to confirm success.
+         * @param {string} elementId - The ID of the element whose text to copy.
+         * @param {HTMLElement} button - The button element that was clicked.
+         */
+        function copyToClipboard(elementId, button) {
+            const textToCopy = document.getElementById(elementId).innerText;
+
+            // Use the modern clipboard API
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Success feedback
+                const originalText = button.innerText;
+                button.innerText = 'Copied! ✅';
+                button.style.backgroundColor = 'var(--success-color)';
+
+                // Revert button text after a short delay
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.backgroundColor = 'var(--primary-color)';
+                }, 1500);
+            }).catch(err => {
+                // Fallback for older browsers (or security restrictions)
+                console.error('Could not copy text: ', err);
+                alert("Copy failed. Please select and copy the text manually.");
+            });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Learning Guide • Equinim Intake</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <style>
+        :root {
+            --brand-dark: #0f172a;
+            --brand: #1e293b;
+            --brand-acc: #16a34a;
+            --brand-soft: #e2e8f0;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+        }
+
+        .navbar {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+        }
+
+        .hero {
+            background: radial-gradient(1200px 600px at 80% -10%, rgba(22, 163, 74, .12), transparent),
+                linear-gradient(180deg, #fff, #f8fafc 60%);
+        }
+
+        .learning-section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+        }
+
+        .learning-section h3 {
+            color: var(--brand-acc);
+            border-left: 4px solid var(--brand-acc);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .topic-item {
+            background: #f0fdf4;
+            border-left: 3px solid var(--brand-acc);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+
+        .topic-item h5 {
+            color: var(--brand-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .topic-item ul {
+            margin-bottom: 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--brand-acc);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            background-color: #15803d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i
+                    class="bi bi-mortarboard-fill text-success me-2"></i>Equinim Intake Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Back to Hub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero py-5 border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <span class="badge bg-success text-white mb-3">Learning Resource</span>
+                    <h1 class="display-4 fw-bold mb-3">
+                        <i class="bi bi-bootstrap-fill text-success me-2"></i>Welcome to Bootstrap
+                    </h1>
+                    <p class="lead text-secondary">
+                        A comprehensive guide to mastering Bootstrap - the world's most popular front-end framework
+                        for building responsive, mobile-first websites.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+
+                <!-- Introduction to Bootstrap -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-info-circle-fill text-success me-2"></i>Introduction to Bootstrap</h3>
+                    
+                    <h5 class="text-success mt-4 mb-3">Overview of what Bootstrap is and its importance in web development</h5>
+                    <p>Bootstrap is a free, open-source front-end framework designed to help developers build responsive, mobile-first websites quickly and efficiently. Created by Twitter developers Mark Otto and Jacob Thornton, Bootstrap provides a comprehensive collection of pre-designed HTML, CSS, and JavaScript components that eliminate the need to write complex code from scratch. It includes everything from navigation bars and buttons to forms, modals, and grid systems, making it one of the most popular frameworks in web development.</p>
+                    <p>The importance of Bootstrap in modern web development cannot be overstated. It significantly reduces development time by providing ready-to-use components and utilities, ensures consistency across different browsers and devices, and promotes best practices in responsive design. With Bootstrap, developers can focus on building features rather than wrestling with CSS compatibility issues or creating responsive layouts from the ground up. Its widespread adoption has created a large community of developers, extensive documentation, and countless resources for learning and troubleshooting.</p>
+
+                    <h5 class="text-success mt-4 mb-3">History and evolution of Bootstrap</h5>
+                    <p>Bootstrap was originally created in 2010 as "Twitter Blueprint" by Mark Otto and Jacob Thornton at Twitter to standardize the company's internal tool development and ensure consistency across their platforms. It was released as an open-source project in August 2011, quickly gaining popularity in the web development community. Since then, Bootstrap has evolved through multiple major versions, each introducing significant improvements. Bootstrap 3 (released in 2013) introduced a mobile-first approach and flat design. Bootstrap 4 (2018) moved from Less to Sass, introduced Flexbox for the grid system, and added new components. The current Bootstrap 5 (launched in 2021) removed jQuery dependency, enhanced customization options, added new utilities, and improved documentation, making it faster and more lightweight than ever before.</p>
+
+                    <h5 class="text-success mt-4 mb-3">Advantages of using Bootstrap for website development</h5>
+                    <p>Bootstrap offers numerous advantages that make it an excellent choice for both beginners and experienced developers. First and foremost, its responsive grid system automatically adapts your website layout to different screen sizes, from mobile phones to large desktop monitors, without requiring extensive media query coding. The framework's comprehensive component library means you can build professional-looking websites in a fraction of the time it would take to create everything from scratch. Bootstrap also ensures cross-browser compatibility, eliminating many of the frustrating inconsistencies that plague web development. Additionally, its extensive documentation, active community support, and widespread adoption mean that finding solutions to problems or learning new techniques is straightforward.</p>
+                    <p>Beyond time savings and ease of use, Bootstrap promotes coding best practices and accessibility standards. The framework's components are built with semantic HTML and include ARIA attributes for screen readers, making your websites more accessible to users with disabilities. Bootstrap's utility classes provide a consistent naming convention that makes your code more maintainable and easier for teams to collaborate on. The framework is also highly customizable—you can use Sass variables to create custom themes that match your brand identity while still leveraging Bootstrap's powerful features. Whether you're building a simple landing page or a complex web application, Bootstrap provides the tools and flexibility to bring your vision to life efficiently and professionally.</p>
+                </div>
+
+                <!-- Setting Up Bootstrap -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-gear-fill text-success me-2"></i>Setting Up Bootstrap</h3>
+                    
+                    <h5 class="text-success mt-4 mb-3">Downloading Bootstrap or linking via CDN</h5>
+                    <p>There are two main ways to add Bootstrap to your project: downloading the compiled files or linking to a Content Delivery Network (CDN). The CDN method is the quickest and most popular for beginners, as it requires no downloads or file management. Simply add the following code to your HTML <code>&lt;head&gt;</code> section:</p>
+                    
+                    <div class="alert alert-dark">
+                        <h6 class="mb-3">Bootstrap CSS (add to <code>&lt;head&gt;</code>):</h6>
+                        <pre class="bg-dark text-light p-3 rounded"><code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+      crossorigin="anonymous" /&gt;</code></pre>
+                        
+                        <h6 class="mb-3 mt-4">Bootstrap JavaScript (add before closing <code>&lt;/body&gt;</code> tag):</h6>
+                        <pre class="bg-dark text-light p-3 rounded"><code>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Basic project structure and file organization</h5>
+                    <p>A well-organized Bootstrap project typically follows a clear folder structure to keep your files manageable and maintainable. At the root level, you'll have your main <code>index.html</code> file. Create separate folders for different asset types: a <code>css</code> folder for your custom stylesheets, a <code>js</code> folder for your JavaScript files, an <code>images</code> folder for graphics and photos, and optionally a <code>pages</code> folder for additional HTML pages. If you've downloaded Bootstrap locally rather than using the CDN, you would place the Bootstrap files in your <code>css</code> and <code>js</code> folders. Your custom CSS should always be linked after Bootstrap's CSS so that your styles can override Bootstrap's defaults when needed. This organized structure makes it easy to find files, collaborate with team members, and scale your project as it grows.</p>
+                    
+                    <div class="card bg-light border-success mt-3">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-folder-fill me-2"></i>Typical Project Structure:</h6>
+                            <pre class="mb-0">project-folder/
+├── index.html
+├── css/
+│   ├── bootstrap.min.css (if downloaded)
+│   └── custom.css
+├── js/
+│   ├── bootstrap.bundle.min.js (if downloaded)
+│   └── custom.js
+├── images/
+│   └── logo.png
+└── pages/
+    └── about.html</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bootstrap Grid System -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-grid-3x3-gap-fill text-success me-2"></i>Bootstrap Grid System</h3>
+                    
+                    <h5 class="text-success mt-4 mb-3">Understanding the grid layout system (containers, rows, and columns)</h5>
+                    <p>Bootstrap's grid system is built on a flexible 12-column layout that allows you to create responsive designs with ease. The system works on three main building blocks: <strong>containers</strong>, <strong>rows</strong>, and <strong>columns</strong>. A <strong>container</strong> wraps your content and provides proper padding and alignment. Inside containers, you create <strong>rows</strong> which act as horizontal groups for your columns. Finally, <strong>columns</strong> are placed inside rows and can span anywhere from 1 to 12 of the available column spaces. For example, you could have three columns that each take up 4 spaces (4+4+4=12), or two columns taking up 8 and 4 spaces respectively (8+4=12). This 12-column system provides incredible flexibility for creating virtually any layout you can imagine.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-code-slash me-2"></i>Basic Grid Example:</h6>
+                            <pre class="mb-0"><code>&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-4"&gt;Column 1 (4/12)&lt;/div&gt;
+    &lt;div class="col-4"&gt;Column 2 (4/12)&lt;/div&gt;
+    &lt;div class="col-4"&gt;Column 3 (4/12)&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Grid classes (.container, .container-fluid, .row, .col-*)</h5>
+                    <p>Bootstrap provides several essential grid classes. The <code>.container</code> class creates a responsive fixed-width container that centers your content and adjusts its width at different breakpoints. For a full-width container that spans 100% of the viewport, use <code>.container-fluid</code>. Every row of columns must be wrapped in a <code>.row</code> class, which uses negative margins to offset the padding of columns and ensure proper alignment. Column classes follow the pattern <code>.col-*</code> where the asterisk represents a number from 1 to 12, indicating how many columns that element should span. You can also use <code>.col</code> without a number to create equal-width columns that automatically divide the available space.</p>
+
+                    <h5 class="text-success mt-4 mb-3">Nesting columns</h5>
+                    <p>One of Bootstrap's powerful features is the ability to nest columns within columns, creating complex layouts while maintaining responsiveness. To nest columns, simply add a new <code>.row</code> inside an existing column, then add your nested columns inside that new row. Each nested row gets its own 12-column grid to work with. This is particularly useful for creating sophisticated layouts like sidebars with multiple sections, card grids within content areas, or complex forms with grouped fields.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-code-slash me-2"></i>Nesting Example:</h6>
+                            <pre class="mb-0"><code>&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-8"&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-6"&gt;Nested Column 1&lt;/div&gt;
+        &lt;div class="col-6"&gt;Nested Column 2&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;Sidebar&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Responsive design with breakpoints (xs, sm, md, lg, xl)</h5>
+                    <p>Bootstrap's responsive breakpoint system allows your layout to adapt seamlessly to different screen sizes. The framework defines five breakpoint tiers: <strong>xs</strong> (extra small, <576px), <strong>sm</strong> (small, ≥576px), <strong>md</strong> (medium, ≥768px), <strong>lg</strong> (large, ≥992px), and <strong>xl</strong> (extra large, ≥1200px). You can specify different column widths for different screen sizes using classes like <code>.col-sm-6</code>, <code>.col-md-4</code>, or <code>.col-lg-3</code>. For example, <code>class="col-12 col-md-6 col-lg-4"</code> would make an element take full width on mobile, half width on tablets, and one-third width on desktops.</p>
+                    
+                    <div class="card bg-light border-success mt-3">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-phone-laptop me-2"></i>Responsive Breakpoints:</h6>
+                            <ul class="mb-0">
+                                <li><strong>xs:</strong> &lt;576px (phones, portrait)</li>
+                                <li><strong>sm:</strong> ≥576px (phones, landscape)</li>
+                                <li><strong>md:</strong> ≥768px (tablets)</li>
+                                <li><strong>lg:</strong> ≥992px (desktops)</li>
+                                <li><strong>xl:</strong> ≥1200px (large desktops)</li>
+                                <li><strong>xxl:</strong> ≥1400px (extra large desktops)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bootstrap Components -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-puzzle-fill text-success me-2"></i>Bootstrap Components</h3>
+                    <div class="topic-item">
+                        <h5>
+                            <a href="https://www.w3schools.com/bootstrap5/bootstrap_navbar.php" target="_blank" class="text-decoration-none text-success">
+                                Navigation Components <i class="bi bi-box-arrow-up-right small"></i>
+                            </a>
+                        </h5>
+                        <p class="mb-0 text-secondary">Navbar, navs, tabs</p>
+                    </div>
+                    <div class="topic-item">
+                        <h5>
+                            <a href="https://www.w3schools.com/bootstrap5/bootstrap_buttons.php" target="_blank" class="text-decoration-none text-success">
+                                Buttons and Button Groups <i class="bi bi-box-arrow-up-right small"></i>
+                            </a>
+                        </h5>
+                        <p class="mb-0 text-secondary">Various button styles and grouping options</p>
+                    </div>
+                    <div class="topic-item">
+                        <h5>
+                            <a href="https://www.w3schools.com/bootstrap5/bootstrap_forms.php" target="_blank" class="text-decoration-none text-success">
+                                Forms and Form Components <i class="bi bi-box-arrow-up-right small"></i>
+                            </a>
+                        </h5>
+                        <p class="mb-0 text-secondary">Inputs, selects, checkboxes, radio buttons, etc.</p>
+                    </div>
+                    <div class="topic-item">
+                        <h5>
+                            <a href="https://www.w3schools.com/bootstrap5/bootstrap_alerts.php" target="_blank" class="text-decoration-none text-success">
+                                Alerts, Badges, and Progress Bars <i class="bi bi-box-arrow-up-right small"></i>
+                            </a>
+                        </h5>
+                        <p class="mb-0 text-secondary">Notification and status display elements</p>
+                    </div>
+                    <div class="topic-item">
+                        <h5>
+                            <a href="https://www.w3schools.com/bootstrap5/bootstrap_cards.php" target="_blank" class="text-decoration-none text-success">
+                                Cards and Media Objects <i class="bi bi-box-arrow-up-right small"></i>
+                            </a>
+                        </h5>
+                        <p class="mb-0 text-secondary">Content containers and media layouts</p>
+                    </div>
+                    <div class="topic-item">
+                        <h5>
+                            <a href="https://www.w3schools.com/bootstrap5/bootstrap_modal.php" target="_blank" class="text-decoration-none text-success">
+                                Modals and Tooltips <i class="bi bi-box-arrow-up-right small"></i>
+                            </a>
+                        </h5>
+                        <p class="mb-0 text-secondary">Interactive overlays and helpful hints</p>
+                    </div>
+                    <div class="topic-item">
+                        <h5>
+                            <a href="https://www.w3schools.com/bootstrap5/bootstrap_carousel.php" target="_blank" class="text-decoration-none text-success">
+                                Carousel <i class="bi bi-box-arrow-up-right small"></i>
+                            </a>
+                        </h5>
+                        <p class="mb-0 text-secondary">Image sliders and content rotators</p>
+                    </div>
+                </div>
+
+                <!-- Bootstrap Utilities -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-tools text-success me-2"></i>Bootstrap Utilities</h3>
+                    
+                    <h5 class="text-success mt-4 mb-3">Spacing utilities (margins, paddings)</h5>
+                    <p>Bootstrap provides a comprehensive spacing utility system that makes it easy to add margins and padding without writing custom CSS. The spacing utilities follow a simple naming convention: <code>.m-*</code> for margin and <code>.p-*</code> for padding, where the asterisk represents a number from 0 to 5 (or auto). You can target specific sides using <code>.mt-*</code> (top), <code>.mb-*</code> (bottom), <code>.ms-*</code> (start/left), <code>.me-*</code> (end/right), or use <code>.mx-*</code> for horizontal and <code>.my-*</code> for vertical spacing. Each number corresponds to a multiple of the base spacing unit (typically 0.25rem), so <code>.m-3</code> equals 1rem of margin. These utilities are also responsive, allowing you to add breakpoint-specific spacing like <code>.mt-md-5</code> for large top margins on medium screens and up.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-code-slash me-2"></i>Spacing Examples:</h6>
+                            <pre class="mb-0"><code>&lt;!-- Margin examples --&gt;
+&lt;div class="m-3"&gt;All sides margin&lt;/div&gt;
+&lt;div class="mt-5"&gt;Top margin only&lt;/div&gt;
+&lt;div class="mx-auto"&gt;Centered with auto horizontal margin&lt;/div&gt;
+
+&lt;!-- Padding examples --&gt;
+&lt;div class="p-4"&gt;All sides padding&lt;/div&gt;
+&lt;div class="py-2"&gt;Top and bottom padding&lt;/div&gt;
+&lt;div class="px-3"&gt;Left and right padding&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Display utilities (show/hide, visibility)</h5>
+                    <p>Bootstrap's display utilities allow you to control the visibility and display behavior of elements across different screen sizes. The <code>.d-*</code> classes let you set display properties like <code>.d-block</code>, <code>.d-inline</code>, <code>.d-flex</code>, and <code>.d-none</code>. These classes can be combined with responsive breakpoints to show or hide elements on specific screen sizes. For example, <code>.d-none .d-md-block</code> will hide an element on small screens but show it as a block on medium screens and larger. This is incredibly useful for creating responsive designs where certain content appears or disappears based on the viewport size, such as hiding detailed descriptions on mobile or showing additional navigation items on desktop.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-eye-slash me-2"></i>Display Utility Examples:</h6>
+                            <pre class="mb-0"><code>&lt;!-- Hide on mobile, show on desktop --&gt;
+&lt;div class="d-none d-lg-block"&gt;Desktop only content&lt;/div&gt;
+
+&lt;!-- Show on mobile, hide on desktop --&gt;
+&lt;div class="d-block d-lg-none"&gt;Mobile only content&lt;/div&gt;
+
+&lt;!-- Flexbox display --&gt;
+&lt;div class="d-flex"&gt;Flex container&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Flexbox utilities</h5>
+                    <p>Bootstrap includes a powerful set of flexbox utilities that make creating flexible layouts incredibly easy. The <code>.d-flex</code> class converts an element into a flex container, while utilities like <code>.justify-content-*</code> control horizontal alignment (start, center, end, between, around), and <code>.align-items-*</code> control vertical alignment (start, center, end, stretch). You can also use <code>.flex-row</code> or <code>.flex-column</code> to set the direction, <code>.flex-wrap</code> to allow items to wrap, and <code>.flex-grow-*</code> or <code>.flex-shrink-*</code> to control how items grow or shrink. The <code>.gap-*</code> utilities add spacing between flex items without needing margins. These utilities are all responsive, so you can create layouts that adapt their flex behavior at different breakpoints.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-layout-split me-2"></i>Flexbox Examples:</h6>
+                            <pre class="mb-0"><code>&lt;!-- Center content horizontally and vertically --&gt;
+&lt;div class="d-flex justify-content-center align-items-center" style="height: 200px;"&gt;
+  &lt;p&gt;Centered content&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Space between items --&gt;
+&lt;div class="d-flex justify-content-between"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Text and typography utilities</h5>
+                    <p>Bootstrap provides extensive text utilities for controlling typography without custom CSS. Use <code>.text-start</code>, <code>.text-center</code>, or <code>.text-end</code> for text alignment, and <code>.text-wrap</code> or <code>.text-nowrap</code> to control wrapping behavior. Font weight can be set with <code>.fw-bold</code>, <code>.fw-normal</code>, or <code>.fw-light</code>. Text transformation utilities include <code>.text-lowercase</code>, <code>.text-uppercase</code>, and <code>.text-capitalize</code>. The <code>.text-decoration-*</code> classes control underlines and other text decorations. Font sizes can be adjusted with <code>.fs-1</code> through <code>.fs-6</code> for headings, and <code>.small</code> for smaller text. Line height can be controlled with <code>.lh-1</code>, <code>.lh-sm</code>, <code>.lh-base</code>, or <code>.lh-lg</code>.</p>
+                    
+                    <div class="card bg-light border-success mt-3">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-fonts me-2"></i>Typography Utilities:</h6>
+                            <ul class="mb-0">
+                                <li><code>.text-start</code>, <code>.text-center</code>, <code>.text-end</code> - Text alignment</li>
+                                <li><code>.fw-bold</code>, <code>.fw-normal</code>, <code>.fw-light</code> - Font weights</li>
+                                <li><code>.fs-1</code> through <code>.fs-6</code> - Font sizes (heading scale)</li>
+                                <li><code>.text-uppercase</code>, <code>.text-lowercase</code>, <code>.text-capitalize</code> - Text transformation</li>
+                                <li><code>.text-decoration-none</code>, <code>.text-decoration-underline</code> - Text decoration</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Background and color utilities</h5>
+                    <p>Bootstrap's color utilities make it simple to apply consistent colors throughout your design. Text colors can be applied with <code>.text-primary</code>, <code>.text-secondary</code>, <code>.text-success</code>, <code>.text-danger</code>, <code>.text-warning</code>, <code>.text-info</code>, <code>.text-light</code>, <code>.text-dark</code>, and <code>.text-muted</code>. Background colors use the same naming convention with <code>.bg-*</code> classes. For more subtle backgrounds, use opacity variants like <code>.bg-primary-subtle</code>. Link colors can be set with <code>.link-*</code> classes. The <code>.text-opacity-*</code> and <code>.bg-opacity-*</code> utilities allow you to control opacity in increments of 25%, giving you fine control over color intensity. Border colors follow the same pattern with <code>.border-*</code> classes.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-paint-bucket me-2"></i>Color Examples:</h6>
+                            <pre class="mb-0"><code>&lt;!-- Text colors --&gt;
+&lt;p class="text-primary"&gt;Primary text&lt;/p&gt;
+&lt;p class="text-success"&gt;Success text&lt;/p&gt;
+
+&lt;!-- Background colors --&gt;
+&lt;div class="bg-warning text-dark p-3"&gt;Warning background&lt;/div&gt;
+&lt;div class="bg-primary-subtle p-3"&gt;Subtle primary background&lt;/div&gt;
+
+&lt;!-- With opacity --&gt;
+&lt;div class="bg-success bg-opacity-50 p-3"&gt;50% opacity background&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Responsive utilities</h5>
+                    <p>Almost all Bootstrap utilities can be made responsive by adding a breakpoint infix. This allows you to apply different utility classes at different screen sizes. The format is <code>.{property}-{breakpoint}-{value}</code>, such as <code>.text-center .text-md-start</code> to center text on small screens but align left on medium screens and up. This works with spacing utilities (<code>.mt-3 .mt-lg-5</code>), display utilities (<code>.d-none .d-lg-block</code>), flexbox utilities (<code>.flex-column .flex-md-row</code>), and virtually every other utility class. This responsive approach eliminates the need for custom media queries in most cases, allowing you to build complex responsive layouts entirely with utility classes.</p>
+                </div>
+
+                <!-- Customization and Theming -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-palette-fill text-success me-2"></i>Customization and Theming</h3>
+                    
+                    <h5 class="text-success mt-4 mb-3">Using Bootstrap's customization options (Sass variables)</h5>
+                    <p>Bootstrap is built with Sass, a CSS preprocessor that allows for powerful customization through variables. When you use the Sass source files instead of the compiled CSS, you can customize virtually every aspect of Bootstrap by modifying Sass variables before compilation. These variables control colors, spacing, typography, breakpoints, component styling, and more. For example, you can change <code>$primary</code> to set your brand color throughout the entire framework, or modify <code>$spacer</code> to adjust the base spacing unit used by all spacing utilities. You can also customize component-specific variables like <code>$btn-padding-y</code> for button padding or <code>$navbar-brand-font-size</code> for navbar branding. This approach allows you to create a completely custom look while maintaining Bootstrap's responsive grid and component structure.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-code-slash me-2"></i>Sass Customization Example:</h6>
+                            <pre class="mb-0"><code>// custom.scss
+// Override Bootstrap variables before importing
+$primary: #16a34a;
+$secondary: #1e293b;
+$font-family-base: 'Inter', sans-serif;
+$border-radius: 0.5rem;
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Add your custom styles
+.my-custom-class {
+  color: $primary;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Creating custom themes</h5>
+                    <p>Creating a custom Bootstrap theme involves defining your brand colors, typography, spacing, and component styles in a systematic way. Start by creating a custom Sass file where you override Bootstrap's default variables. Choose a primary color that represents your brand, then use color theory to select complementary secondary, success, danger, warning, and info colors. Customize typography by selecting Google Fonts or other web fonts and setting the <code>$font-family-base</code> variable. Adjust spacing by modifying <code>$spacer</code> and the spacer map. For components, you can customize border radius, shadows, transitions, and specific component variables. After compiling your custom Sass, you'll have a unique theme that still leverages Bootstrap's responsive grid and component system. Consider creating a design system document to maintain consistency across your theme.</p>
+                    
+                    <h5 class="text-success mt-4 mb-3">Integrating third-party themes</h5>
+                    <p>Many developers and companies create pre-made Bootstrap themes that you can purchase or download for free. Popular marketplaces like ThemeForest, BootstrapMade, and Creative Tim offer thousands of themes for various purposes (admin dashboards, landing pages, e-commerce sites, portfolios). To integrate a third-party theme, download the theme files and replace Bootstrap's default CSS with the theme's compiled CSS file. Most themes include documentation on how to customize variables, integrate the theme into your build process, and use theme-specific components. When selecting a theme, check for recent updates (Bootstrap 5 compatibility), responsive design, browser compatibility, accessibility features, and comprehensive documentation. Some themes also include additional JavaScript components, UI kits, and page templates that can significantly speed up development.</p>
+                </div>
+
+                <!-- Responsive Design -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-phone-fill text-success me-2"></i>Responsive Design</h3>
+                    
+                    <h5 class="text-success mt-4 mb-3">Importance of responsive design</h5>
+                    <p>Responsive design is no longer optional in modern web development—it's essential. With over 60% of web traffic coming from mobile devices, websites must provide excellent experiences across all screen sizes. A responsive website automatically adjusts its layout, images, and functionality to fit the device being used, whether it's a smartphone, tablet, laptop, or desktop monitor. This approach offers numerous benefits: improved user experience leading to longer visit times, better SEO rankings (Google prioritizes mobile-friendly sites), reduced development costs (one site instead of separate mobile/desktop versions), easier maintenance, and future-proof design that works on new devices. Bootstrap makes responsive design straightforward with its mobile-first approach, flexible grid system, and responsive utility classes.</p>
+                    
+                    <h5 class="text-success mt-4 mb-3">Media queries and breakpoints</h5>
+                    <p>Media queries are CSS techniques that apply styles based on device characteristics, primarily screen width. Bootstrap uses media queries to define breakpoints—specific screen widths where the layout changes to accommodate different devices. Bootstrap 5 includes six default breakpoints: xs (&lt;576px) for phones, sm (≥576px) for larger phones, md (≥768px) for tablets, lg (≥992px) for desktops, xl (≥1200px) for large desktops, and xxl (≥1400px) for extra large screens. Bootstrap's mobile-first approach means styles apply to smaller screens by default, then you add breakpoint-specific classes to modify layouts for larger screens. For example, <code>class="col-12 col-md-6 col-lg-4"</code> makes an element full-width on mobile, half-width on tablets, and one-third width on desktops. Understanding breakpoints is crucial for creating fluid, responsive layouts.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-phone-laptop me-2"></i>Bootstrap Breakpoints:</h6>
+                            <ul class="mb-0">
+                                <li><strong>xs (extra small):</strong> &lt;576px - Phones in portrait mode</li>
+                                <li><strong>sm (small):</strong> ≥576px - Phones in landscape, small tablets</li>
+                                <li><strong>md (medium):</strong> ≥768px - Tablets in portrait mode</li>
+                                <li><strong>lg (large):</strong> ≥992px - Tablets in landscape, laptops</li>
+                                <li><strong>xl (extra large):</strong> ≥1200px - Desktop monitors</li>
+                                <li><strong>xxl (extra extra large):</strong> ≥1400px - Large desktop monitors</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Testing and debugging for responsiveness</h5>
+                    <p>Thorough testing is essential to ensure your responsive design works correctly across all devices. Use browser developer tools (Chrome DevTools, Firefox Developer Tools) to simulate different screen sizes and test your layout at various breakpoints. Most browsers include device presets for popular phones and tablets, but also test custom viewport sizes to catch edge cases. Test on actual devices when possible, as simulators don't always accurately represent real-world performance and touch interactions. Check for common responsive issues: text that's too small to read on mobile, images that overflow their containers, horizontal scrolling, buttons that are too small to tap easily, and layout breaks at specific widths. Use the responsive design mode in developer tools to identify which CSS rules are active at different breakpoints. Tools like BrowserStack or LambdaTest allow testing on real devices in the cloud. Always test both portrait and landscape orientations on mobile devices.</p>
+                </div>
+
+                <!-- Best Practices and Tips -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-star-fill text-success me-2"></i>Best Practices and Tips</h3>
+                    
+                    <h5 class="text-success mt-4 mb-3">Accessibility considerations</h5>
+                    <p>Accessible web design ensures your site can be used by everyone, including people with disabilities. Bootstrap includes many accessibility features by default, but you must implement them correctly. Always use semantic HTML elements (<code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>) as Bootstrap components are built with these in mind. Add ARIA attributes where needed—Bootstrap components like modals, dropdowns, and tabs include ARIA attributes, but custom implementations may need additional attributes. Ensure sufficient color contrast (at least 4.5:1 for normal text, 3:1 for large text) using tools like WebAIM's contrast checker. Make all interactive elements keyboard accessible—users should be able to navigate and interact with your site using only Tab, Enter, and arrow keys. Provide alternative text for images with the <code>alt</code> attribute. Use proper heading hierarchy (h1, h2, h3) for screen readers. Test with screen readers like NVDA (Windows) or VoiceOver (Mac) to experience your site as a visually impaired user would.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-universal-access me-2"></i>Accessibility Checklist:</h6>
+                            <ul class="mb-0">
+                                <li>Use semantic HTML elements consistently</li>
+                                <li>Ensure sufficient color contrast ratios</li>
+                                <li>Make all functionality keyboard accessible</li>
+                                <li>Provide text alternatives for non-text content</li>
+                                <li>Use ARIA attributes for dynamic content and complex widgets</li>
+                                <li>Test with screen readers and keyboard navigation</li>
+                                <li>Ensure forms have properly associated labels</li>
+                                <li>Avoid using color as the only means of conveying information</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Cross-browser compatibility</h5>
+                    <p>Bootstrap 5 supports all modern browsers (Chrome, Firefox, Safari, Edge) and has dropped support for Internet Explorer entirely. However, cross-browser testing remains important as browsers can still render certain features differently. Use feature detection libraries like Modernizr when using cutting-edge CSS or JavaScript features. Test your site in all major browsers across different operating systems. Pay attention to vendor prefixes for CSS properties, though Bootstrap handles most of these automatically. Be aware that Safari sometimes lags behind in implementing new web standards. Use progressive enhancement—ensure your site's core functionality works in all browsers, then add enhanced features for modern browsers. Consider using tools like Autoprefixer to automatically add vendor prefixes during your build process. BrowserStack and similar services allow testing across many browser and OS combinations without maintaining physical devices.</p>
+                    
+                    <h5 class="text-success mt-4 mb-3">Performance optimization techniques</h5>
+                    <p>Bootstrap is relatively lightweight, but you should still optimize for performance. If you're not using all of Bootstrap's components, create a custom build that includes only what you need—this can significantly reduce file size. Use the minified versions of CSS and JavaScript files in production (<code>bootstrap.min.css</code>, <code>bootstrap.bundle.min.js</code>). Enable GZIP compression on your web server to reduce transfer sizes. Consider using a CDN for Bootstrap files, which provides faster loading through global server distribution and browser caching. For images, use appropriate formats (WebP for photos, SVG for icons), compress images, and implement lazy loading with <code>loading="lazy"</code>. Minimize the use of custom fonts or load them asynchronously. Use Bootstrap's utility classes instead of writing custom CSS when possible—this reduces CSS bloat. Audit your site's performance with Lighthouse, Google PageSpeed Insights, or WebPageTest, and address the issues they identify.</p>
+                    
+                    <h5 class="text-success mt-4 mb-3">Code organization and cleanliness</h5>
+                    <p>Maintaining clean, organized code is crucial for long-term project success. Use consistent naming conventions for classes and IDs—consider methodologies like BEM (Block Element Modifier) for custom classes. Keep your HTML structure semantic and logical, grouping related elements together. Comment complex sections of code to explain the purpose and any non-obvious functionality. Separate concerns by keeping structure (HTML), presentation (CSS), and behavior (JavaScript) in separate files. Use Bootstrap's utility classes for simple styling rather than creating single-purpose custom classes. When writing custom CSS, organize it logically (perhaps by component or page) and consider using Sass to nest selectors and use variables. Regularly refactor your code to eliminate duplication and improve efficiency. Use version control (Git) to track changes and collaborate with others. Follow a style guide to maintain consistency across your codebase. Tools like Prettier and ESLint can automatically format your code and catch common errors.</p>
+                </div>
+
+                <!-- Project Work -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-code-square text-success me-2"></i>Project Work</h3>
+                    
+                    <h5 class="text-success mt-4 mb-3">Hands-on exercises and projects to reinforce learning</h5>
+                    <p>The best way to master Bootstrap is through practical, hands-on experience. Start with simple exercises like recreating common UI patterns—a basic navigation bar, a contact form with validation styling, a pricing table with cards, or a photo gallery with the grid system. Each exercise should focus on specific Bootstrap concepts: utility classes, the grid system, specific components, or responsive design. Gradually increase complexity as you become more comfortable. Try recreating sections from real websites you admire, focusing on responsive layouts and component composition. Build small, complete projects like a landing page for a fictional product, a portfolio site showcasing your work, or a simple blog layout with a sidebar. These projects help you understand how Bootstrap components work together in a real-world context. Share your work with peers or online communities like CodePen or GitHub to get feedback and learn from others. Document your learning process and the challenges you overcome—this reflection reinforces your understanding and creates a valuable reference for the future.</p>
+                    
+                    <h5 class="text-success mt-4 mb-3">Building a responsive website layout from scratch using Bootstrap</h5>
+                    <p>Creating a complete responsive website from scratch is the ultimate test of your Bootstrap skills. Start by planning your site structure—sketch out wireframes for mobile, tablet, and desktop views, identifying where breakpoints should affect the layout. Create a basic HTML structure with proper semantic elements: header with navigation, main content area, sidebar (if needed), and footer. Implement the navigation bar using Bootstrap's navbar component, making it responsive with a hamburger menu for mobile devices. Use the grid system to create your main layout, typically with a container, rows, and columns that adapt at different breakpoints. Build out sections using appropriate Bootstrap components—cards for content blocks, forms for user input, carousels for image galleries, modals for additional information. Apply utility classes for spacing, colors, and typography to match your design vision. Implement responsive images that scale properly on all devices. Add custom CSS sparingly for unique design elements that Bootstrap doesn't provide out of the box. Test thoroughly across different devices and browsers, fixing any layout issues or accessibility concerns. Deploy your completed site to demonstrate your mastery of Bootstrap's full feature set.</p>
+                    
+                    <h5 class="text-success mt-4 mb-3">Incorporating various Bootstrap components into projects</h5>
+                    <p>As your confidence grows, challenge yourself to incorporate a wide variety of Bootstrap components into your projects. Create an admin dashboard that uses navs, tabs, cards, progress bars, badges, and alerts to display information. Build an e-commerce site mockup featuring a navbar with dropdown menus, a product grid using cards, image carousels for product photos, forms for checkout, and modals for quick product views. Develop a blog or news site using cards for article previews, pagination for navigating multiple pages, breadcrumbs for navigation hierarchy, and a sidebar with list groups for categories. Include interactive components like accordions for FAQs, tooltips for additional information, popovers for detailed explanations, and collapse components for expandable sections. Experiment with form components including input groups, floating labels, validation styling, and custom checkboxes/radio buttons. Try creating a portfolio site that showcases your work using a masonry-style grid, modals for detailed project views, and scroll spy for navigation highlighting. The key is to use components purposefully—each should serve a specific user need rather than being included just because it exists. This practical experience with diverse components prepares you to choose the right tools for any future project.</p>
+                </div>
+
+                <!-- Resources and Further Learning -->
+                <div class="learning-section">
+                    <h3><i class="bi bi-book-fill text-success me-2"></i>Resources and Further Learning</h3>
+                    
+                    <h5 class="text-success mt-4 mb-3">Official Bootstrap Documentation</h5>
+                    <p>The official Bootstrap documentation at <a href="https://getbootstrap.com/docs/" target="_blank">getbootstrap.com/docs</a> is the definitive resource for learning Bootstrap. It provides comprehensive coverage of every component, utility class, and feature with clear examples and code snippets. The documentation is well-organized into sections covering Getting Started, Layout (grid system, containers, breakpoints), Content (typography, images, tables), Components (buttons, cards, navbar, etc.), Utilities, and Customization. Each section includes live examples you can interact with directly in your browser. The Examples section showcases complete templates and common patterns you can use as starting points for your projects. The documentation also covers migration guides for upgrading from older Bootstrap versions, browser and device support information, and accessibility guidelines. Bookmark the documentation and refer to it frequently—even experienced developers consult it regularly to check syntax, discover new features, and review best practices.</p>
+                    
+                    <div class="card bg-light border-success mt-3 mb-4">
+                        <div class="card-body">
+                            <h6 class="card-title text-success"><i class="bi bi-link-45deg me-2"></i>Essential Documentation Links:</h6>
+                            <ul class="mb-0">
+                                <li><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank">Getting Started Guide</a></li>
+                                <li><a href="https://getbootstrap.com/docs/5.3/layout/grid/" target="_blank">Grid System Documentation</a></li>
+                                <li><a href="https://getbootstrap.com/docs/5.3/components/alerts/" target="_blank">Components Reference</a></li>
+                                <li><a href="https://getbootstrap.com/docs/5.3/utilities/spacing/" target="_blank">Utility Classes</a></li>
+                                <li><a href="https://getbootstrap.com/docs/5.3/examples/" target="_blank">Official Examples</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success mt-4 mb-3">Recommended books, tutorials, and online resources</h5>
+                    <p>Beyond the official documentation, numerous high-quality resources can accelerate your Bootstrap learning. <strong>W3Schools</strong> (<a href="https://www.w3schools.com/bootstrap5/" target="_blank">w3schools.com/bootstrap5</a>) offers beginner-friendly tutorials with interactive examples you can modify and test directly in the browser. <strong>MDN Web Docs</strong> provides excellent background on HTML, CSS, and JavaScript fundamentals that complement Bootstrap learning. YouTube channels like <strong>Traversy Media</strong>, <strong>Net Ninja</strong>, and <strong>freeCodeCamp</strong> offer video tutorials building complete Bootstrap projects. <strong>Frontend Mentor</strong> and <strong>Codewell</strong> provide design challenges perfect for practicing Bootstrap skills with realistic project briefs. <strong>Scrimba</strong> offers interactive Bootstrap courses where you can pause videos and edit code directly. Books like "Jump Start Bootstrap" and "Bootstrap 5 Foundations" provide structured learning paths. <strong>CodePen</strong> is invaluable for finding Bootstrap examples, experimenting with code, and sharing your creations. <strong>Stack Overflow</strong> is essential for troubleshooting specific problems—search before asking, as most Bootstrap questions have already been answered.</p>
+                    
+                    <h5 class="text-success mt-4 mb-3">Community forums and support channels</h5>
+                    <p>Engaging with the Bootstrap community accelerates your learning and keeps you updated on best practices. The official <strong>Bootstrap GitHub repository</strong> (<a href="https://github.com/twbs/bootstrap" target="_blank">github.com/twbs/bootstrap</a>) is where you can report bugs, request features, and see what's being developed. The <strong>Bootstrap Slack</strong> and <strong>Discord</strong> communities offer real-time chat with other developers who can help solve problems and share insights. <strong>Stack Overflow</strong> has a large Bootstrap tag with thousands of answered questions—always search existing answers before posting new questions, and follow the community guidelines for asking questions. <strong>Reddit's r/webdev</strong> and <strong>r/web_design</strong> communities frequently discuss Bootstrap projects and techniques. Follow <strong>@getbootstrap</strong> on Twitter for official updates, version releases, and announcements. Join <strong>Facebook groups</strong> dedicated to web development and Bootstrap. Many developers share Bootstrap tips and projects on <strong>Dev.to</strong>, <strong>Medium</strong>, and personal blogs. Remember that helping others in these communities is a great way to deepen your own understanding—teaching is one of the most effective learning methods.</p>
+                </div>
+
+                <!-- Key Learning Topics -->
+                <div class="learning-section bg-success bg-opacity-10">
+                    <h3><i class="bi bi-journal-code text-success me-2"></i>Key Learning Topics</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">
+                                        <i class="bi bi-box text-success me-2"></i>Containers
+                                    </h5>
+                                    <p class="card-text small">Understanding container types and when to use them</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">
+                                        <i class="bi bi-palette text-success me-2"></i>Colors
+                                    </h5>
+                                    <p class="card-text small">Bootstrap color system and utility classes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">
+                                        <i class="bi bi-image text-success me-2"></i>Images
+                                    </h5>
+                                    <p class="card-text small">Responsive images and image utilities</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">
+                                        <i class="bi bi-type text-success me-2"></i>Typography
+                                    </h5>
+                                    <p class="card-text small">Text styles, headings, and typography utilities</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">
+                                        <i class="bi bi-hand-index text-success me-2"></i>Buttons
+                                    </h5>
+                                    <p class="card-text small">Button styles, sizes, and states</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">
+                                        <i class="bi bi-menu-button-wide text-success me-2"></i>Navbar
+                                    </h5>
+                                    <p class="card-text small">Creating responsive navigation bars</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">
+                                        <i class="bi bi-card-heading text-success me-2"></i>Cards
+                                    </h5>
+                                    <p class="card-text small">Flexible content containers with multiple variants</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Note -->
+                <div class="alert alert-success mt-4" role="alert">
+                    <h5 class="alert-heading">
+                        <i class="bi bi-lightbulb-fill me-2"></i>Learning Tip
+                    </h5>
+                    <p class="mb-0">
+                        Remember to combine theoretical concepts with practical examples and exercises to ensure 
+                        you grasp the material effectively. Additionally, encourage experimentation and exploration, 
+                        as Bootstrap offers a wide range of features and customization options for creating modern 
+                        web interfaces.
+                    </p>
+                </div>
+
+                <!-- Back to Hub Button -->
+                <div class="text-center mt-5">
+                    <a href="../index.html" class="btn btn-success btn-lg">
+                        <i class="bi bi-arrow-left me-2"></i>Back to Class Hub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="bi bi-arrow-up fs-5"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script>
+        // Back to Top button visibility
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+
+</html>
