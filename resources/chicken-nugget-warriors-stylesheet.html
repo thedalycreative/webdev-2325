@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chicken Nugget Warrior – Style Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Example Google Fonts (can be swapped or removed if not needed) -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Baloo+2:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --nugget-gold: #F4B942;
+            --sauce-red: #D94F30;
+            --sundae-cream: #FFF8E7;
+            --chocolate-drizzle: #5C3B1E;
+            --cone-brown: #C78C5F;
+            --shadow-gray: #4A4A4A;
+            --background-beige: #FDF1E3;
+            --page-max-width: 1000px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Baloo 2", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background-beige);
+            color: #333;
+        }
+
+        .page-wrap {
+            max-width: var(--page-max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-family: "Luckiest Guy", system-ui, sans-serif;
+            font-size: 2.6rem;
+            letter-spacing: 0.03em;
+            margin: 0 0 0.5rem;
+            color: var(--shadow-gray);
+            text-transform: uppercase;
+        }
+
+        header p {
+            margin: 0.25rem 0;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .tagline {
+            font-weight: 600;
+            color: var(--sauce-red);
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        section h2 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+            font-family: "Luckiest Guy", system-ui, sans-serif;
+            letter-spacing: 0.03em;
+            color: var(--shadow-gray);
+            text-transform: uppercase;
+        }
+
+        section h3 {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #444;
+        }
+
+        p {
+            margin-top: 0.4rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+            font-size: 0.98rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: #fffdf9;
+            border-radius: 14px;
+            padding: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .image-preview {
+            text-align: center;
+            margin-top: 0.75rem;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 14px;
+            border: 2px solid rgba(0, 0, 0, 0.06);
+            background: var(--background-beige);
+        }
+
+        .image-caption {
+            margin-top: 0.4rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .swatch {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem;
+            border-radius: 10px;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .swatch-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            flex-shrink: 0;
+        }
+
+        .swatch-label {
+            font-size: 0.9rem;
+        }
+
+        .swatch-label strong {
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .swatch-label code {
+            font-size: 0.8rem;
+            background: rgba(0, 0, 0, 0.04);
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .font-sample {
+            margin-top: 0.5rem;
+            padding: 0.7rem 0.9rem;
+            border-radius: 10px;
+            background: #fffdf9;
+            border: 1px dashed rgba(0, 0, 0, 0.08);
+            font-size: 1.05rem;
+        }
+
+        .font-sample.small {
+            font-size: 0.95rem;
+        }
+
+        .font-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #777;
+            margin-bottom: 0.15rem;
+        }
+
+        .chips-list {
+            margin: 0.4rem 0 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .chips-list li {
+            font-size: 0.8rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: #fffdfb;
+            color: #555;
+        }
+
+        .character-meta {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .character-meta strong {
+            display: inline-block;
+            width: 90px;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #777;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrap">
+        <header>
+            <h1>Chicken Nugget Warrior Style Guide</h1>
+            <p class="tagline">A crispy cartoon universe for web & social</p>
+            <p>Use this guide to keep Chicken Nugget Warrior and friends visually consistent across student projects.
+            </p>
+        </header>
+
+        <!-- Core cast section -->
+        <section id="core-cast">
+            <h2>Core cast</h2>
+            <p>These are the main characters in the Snack Squad universe. Keep their personalities and silhouettes
+                consistent so they’re instantly recognisable.</p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Chicken Nugget Warrior</h3>
+                    <p class="character-meta">
+                        <strong>Role:</strong> Overconfident hero<br>
+                        <strong>Vibe:</strong> Brave, slightly clueless, always dramatic
+                    </p>
+                    <p><strong>Quick idea:</strong> Charges into “epic battles” that are actually very small problems in
+                        the food court.</p>
+                    <div class="image-preview">
+                        <!-- Update this path once the image is exported -->
+                        <img src="/resources/-images/CNW Mascott 25.23.png" alt="Chicken Nugget Warrior character">
+                        <div class="image-caption">Path: <code>/resources/-images/CNW Mascott 25.23.png</code></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Dip</h3>
+                    <p class="character-meta">
+                        <strong>Role:</strong> Saucy strategist<br>
+                        <strong>Vibe:</strong> Clever, talkative, a bit messy
+                    </p>
+                    <p><strong>Quick idea:</strong> Always has a plan, and always gets distracted by new flavour ideas
+                        mid-sentence.</p>
+                    <div class="image-preview">
+                        <!-- Update this path once the image is exported -->
+                        <img src="/resources/-images/CNW Mascott2-Sidekick 25.23.png" alt="Dip dipping sauce sidekick">
+                        <div class="image-caption">Path: <code>-images/CNW Mascott2-Sidekick 25.23.png</code></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Fry</h3>
+                    <p class="character-meta">
+                        <strong>Role:</strong> Crispy ninja<br>
+                        <strong>Vibe:</strong> Fast, dramatic, slightly salty
+                    </p>
+                    <p><strong>Quick idea:</strong> Treats every situation like an action movie trailer, even crossing
+                        the street.</p>
+                    <div class="image-preview">
+                        <!-- Update this path once the image is exported -->
+                        <img src="/resources/-images/CNW Logo Mascott2 Sidekick1 with Text 25.23.png" alt="Fry chips sidekick">
+                        <div class="image-caption">Path: <code>/resources/-images/CNW Logo Mascott2 Sidekick1 with Text 25.23.png</code></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Sunny</h3>
+                    <p class="character-meta">
+                        <strong>Role:</strong> Soft serve support mage<br>
+                        <strong>Vibe:</strong> Sweet, chill, unbothered
+                    </p>
+                    <p><strong>Quick idea:</strong> Uses “soft serve magic” to calm everyone down when the drama gets
+                        too crunchy.</p>
+                    <div class="image-preview">
+                        <!-- Update this path once the image is exported -->
+                        <img src="/resources/-images/CNWP Mascott with text.png" alt="Sunny soft serve sundae sidekick">
+                        <div class="image-caption">Path: <code>/resources/-images/CNWP Mascott with text.png</code></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Snack Squad group art</h3>
+                    <p>Use this group illustration as a hero image or banner where you want to introduce the whole squad
+                        together.</p>
+                    <div class="image-preview">
+                        <!-- This is the “third one” group image with Dip, Fry & Sunny -->
+                        <img src="/resources/-images/CNW Logo Mascott3 Sidekicks with Text - names 25.23.png" alt="Dip, Fry and Sunny group illustration">
+                        <div class="image-caption">Path: <code>/resources/-images/CNW Logo Mascott3 Sidekicks with Text - names 25.23.png</code></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vibe & usage -->
+        <section id="vibe">
+            <h2>Vibe & usage</h2>
+            <h3>Overall tone</h3>
+            <p><strong>Whimsical, friendly, snack-sized heroic.</strong> Think Saturday morning cartoons, internet meme
+                energy, and fast-food mascots with a dash of kawaii.</p>
+
+            <h3>Best use cases</h3>
+            <ul class="chips-list">
+                <li>Student web design projects</li>
+                <li>UI exercises & component demos</li>
+                <li>Mini-comics & panels</li>
+                <li>Reaction images & memes</li>
+                <li>Social media mockups</li>
+            </ul>
+        </section>
+
+        <!-- Colour palette -->
+        <section id="palette">
+            <h2>Colour palette</h2>
+            <p>Use these colours as your core palette. Keep backgrounds soft and characters high contrast so they pop.
+            </p>
+
+            <div class="palette-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="background-color: #F4B942;"></div>
+                    <div class="swatch-label">
+                        <strong>Nugget Gold</strong>
+                        <code>#F4B942</code>
+                        <div>Fry’s body, warm highlights</div>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background-color: #D94F30;"></div>
+                    <div class="swatch-label">
+                        <strong>Sauce Red</strong>
+                        <code>#D94F30</code>
+                        <div>Dip’s container, action accents</div>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background-color: #FFF8E7;"></div>
+                    <div class="swatch-label">
+                        <strong>Sundae Cream</strong>
+                        <code>#FFF8E7</code>
+                        <div>Sunny’s swirl, light panels</div>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background-color: #5C3B1E;"></div>
+                    <div class="swatch-label">
+                        <strong>Chocolate Drizzle</strong>
+                        <code>#5C3B1E</code>
+                        <div>Drizzles, outlines, dark text</div>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background-color: #C78C5F;"></div>
+                    <div class="swatch-label">
+                        <strong>Cone Brown</strong>
+                        <code>#C78C5F</code>
+                        <div>Sunny’s cup/cone, warm UI accents</div>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background-color: #4A4A4A;"></div>
+                    <div class="swatch-label">
+                        <strong>Shadow Gray</strong>
+                        <code>#4A4A4A</code>
+                        <div>Shadows, outlines, body text</div>
+                    </div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch-color" style="background-color: #FDF1E3;"></div>
+                    <div class="swatch-label">
+                        <strong>Background Beige</strong>
+                        <code>#FDF1E3</code>
+                        <div>Page background, panels</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section id="typography">
+            <h2>Typography</h2>
+            <p>Fonts should feel bold, friendly, and readable. Avoid super-thin or overly formal typefaces.</p>
+
+            <h3>Primary display font</h3>
+            <p><strong>Font:</strong> Luckiest Guy (Google Fonts) – for titles, character names, big headings.</p>
+            <div class="font-sample" style="font-family: 'Luckiest Guy', system-ui, sans-serif;">
+                <div class="font-label">Sample</div>
+                CHICKEN NUGGET WARRIOR – SNACK SQUAD STYLE GUIDE
+            </div>
+
+            <h3>Secondary text font</h3>
+            <p><strong>Font:</strong> Baloo 2 (Google Fonts) – for body text, descriptions, UI labels.</p>
+            <div class="font-sample small">
+                <div class="font-label">Sample</div>
+                Dip, Fry &amp; Sunny are the Snack Squad, defending the food court from boring lunches.
+            </div>
+
+            <h3>Optional accent font</h3>
+            <p><strong>Font:</strong> Bangers or similar – for sound effects (e.g., “CRUNCH!”, “SPLAT!”, “SNACK
+                ATTACK!”).</p>
+            <div class="font-sample small" style="font-family: 'Bangers', system-ui, sans-serif;">
+                <div class="font-label">Sample</div>
+                CRUNCH! SPLAT! SNACK ATTACK!
+            </div>
+        </section>
+
+        <!-- Style rules -->
+        <section id="style-rules">
+            <h2>Illustration style rules</h2>
+
+            <h3>Linework</h3>
+            <p>Use thick, clean outlines with slight rounded corners. Avoid sketchy or overly textured lines for main
+                characters.</p>
+
+            <h3>Shapes & proportions</h3>
+            <ul class="chips-list">
+                <li>Big eyes, clear expressions</li>
+                <li>Short limbs, simple hands</li>
+                <li>Rounded corners, no sharp edges</li>
+                <li>Exaggerated eyebrows and mouths</li>
+            </ul>
+
+            <h3>Motion & posing</h3>
+            <p>Characters should feel mid-action: waving, jumping, reacting. Avoid stiff “passport photo” poses where
+                they just stand straight with no personality.</p>
+
+            <h3>Backgrounds</h3>
+            <p>Keep backgrounds soft and light (beige, cream) with minimal detail so the characters remain the focus.
+                Simple shadows under characters are enough.</p>
+        </section>
+
+        <!-- Social/media usage -->
+        <section id="social">
+            <h2>Social & meme usage</h2>
+
+            <h3>Suggested hashtags</h3>
+            <ul class="chips-list">
+                <li>#SnackSquad</li>
+                <li>#ChickenNuggetWarrior</li>
+                <li>#DipFrySunny</li>
+                <li>#SnackAttack</li>
+            </ul>
+
+            <h3>Content ideas for students</h3>
+            <ul class="chips-list">
+                <li>Mini comic: “Battle of the Snackdom”</li>
+                <li>Reaction cards (e.g. Fry’s dramatic gasp)</li>
+                <li>Sunny’s “chill reminder” quote posts</li>
+                <li>Dip’s “sauce of the day” tips</li>
+            </ul>
+        </section>
+
+        <p class="footer-note">
+            Tip: Update the <code>src</code> paths in the image tags once you’ve exported and saved the character
+            images.
+        </p>
+    </div>
+</body>
+
+</html>
