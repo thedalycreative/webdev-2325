@@ -182,27 +182,14 @@
   <!-- SCHEDULE -->
   <section id="schedule" class="py-5 bg-white border-top border-bottom">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-3 text-center">
-          <div class="card border-success border-2 h-100">
-            <div class="card-body d-flex flex-column justify-content-center">
-              <h6 class="text-success fw-bold mb-3"><i class="bi bi-qr-code me-2"></i>Mark Attendance</h6>
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://form.jotform.com/251558291306862" alt="Attendance QR Code" class="img-fluid mb-2">
-              <p class="small text-muted mb-0">Scan to submit attendance</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-9">
-          <h2 class="h3 fw-bold mb-3">Class Schedule</h2>
-          <p class="text-secondary small mb-3">Weekly recurring classes: Mondays & Wednesdays, 5:30–8:30pm AWST. <br> No
-            classes during term breaks (20 Dec 2025–1 Feb 2026) or WA public holidays.</p>
-          <div class="d-flex gap-2 flex-wrap">
-            <a href="Equinim_25.23_MonWed_Recurring.ics" download class="btn btn-outline-secondary btn-sm"><i
-                class="bi bi-calendar-plus me-1"></i>Add to Calendar (iCal)</a>
-            <a href="https://form.jotform.com/251558291306862" target="_blank" class="btn btn-success btn-sm"><i
-                class="bi bi-check-circle me-1"></i>Mark Attendance</a>
-          </div>
-        </div>
+      <h2 class="h3 fw-bold mb-3">Class Schedule</h2>
+      <p class="text-secondary small mb-3">Weekly recurring classes: Mondays & Wednesdays, 5:30–8:30pm AWST. <br> No
+        classes during term breaks (20 Dec 2025–1 Feb 2026) or WA public holidays.</p>
+      <div class="d-flex gap-2 flex-wrap">
+        <a href="Equinim_25.23_MonWed_Recurring.ics" download class="btn btn-outline-secondary btn-sm"><i
+            class="bi bi-calendar-plus me-1"></i>Add to Calendar (iCal)</a>
+        <a href="attendance.html" class="btn btn-success btn-sm"><i
+            class="bi bi-qr-code me-1"></i>Mark Attendance</a>
       </div>
     </div>
   </section>
@@ -708,9 +695,6 @@
                 <a href="resources/chicken-nugget-warriors-stylesheet.html" class="btn btn-sm btn-warning me-2">
                   <i class="bi bi-file-code me-1"></i>Chicken Nugget Warriors Style Guide
                 </a>
-                <a href="https://www.figma.com/board/ehdV4PMe4OlrdzwQaJskhN/Chicken-Nugget-Warrior--Bootstrap-Site-?node-id=0-1&t=QdhsVQd2TQED0Frj-1" class="btn btn-sm btn-warning me-2" target="_blank">
-                  <i class="bi bi-palette me-1"></i>Figma Board
-                </a>
                 <a href="resources/bootstrap-learning.html" class="btn btn-sm btn-success">
                   <i class="bi bi-bootstrap-fill me-1"></i>Bootstrap Learning
                 </a>
@@ -723,11 +707,54 @@
           <div class="card h-100 border-warning border-2 shadow-sm link-card reveal">
             <div class="card-body">
               <span class="badge bg-warning text-dark mb-2">Latest Class</span>
-              <h5 class="card-title"><i class="bi bi-megaphone-fill text-warning me-2"></i>Lesson 14 • Big Announcement Coming! 📣</h5>
-              <div class="alert alert-warning bg-warning-subtle text-warning-emphasis border-0 small mt-3">
-                <i class="bi bi-star-fill me-1"></i>
-                <strong>BIG announcement</strong> to be made for Equinim Legends (you guys/our students) in Perth! Tim might even reveal our new trainer for back end. Stay tuned! 🎉
+              <h5 class="card-title"><i class="bi bi-megaphone-fill text-warning me-2"></i>Lesson 14 • Meet Ryan! New Trainer Announcement 🎉</h5>
+              <div class="alert alert-success bg-success-subtle text-success-emphasis border-0 small mb-3">
+                <i class="bi bi-person-badge-fill me-1"></i>
+                <strong>NEW TRAINER ANNOUNCED!</strong> Ryan Jeffrey will be your back-end trainer starting <strong>February 21st, 2026</strong>! He has extensive experience with JavaScript and full-stack development. Ryan will join for a crossover session next week to meet everyone and answer questions. Check out his portfolio: <a href="https://www.ryancjeffrey.com/" target="_blank" class="text-success fw-bold">ryancjeffrey.com</a>
               </div>
+              <ul class="list-unstyled small mt-3">
+                <li><i class="bi bi-check2 text-success me-2"></i><strong>Team Quiz:</strong> Completed Mentimeter quiz covering Bootstrap, HTML concepts, and fun trivia (Fremantle Dockers!)</li>
+                <li><i class="bi bi-check2 text-success me-2"></i><strong>GitHub Setup:</strong> Students created GitHub accounts and shared usernames for classroom collaboration on cloner website project</li>
+                <li><i class="bi bi-check2 text-success me-2"></i><strong>Bootstrap Progress:</strong> Travis showcased his website design work, received positive feedback from the class</li>
+                <li><i class="bi bi-check2 text-success me-2"></i><strong>Wireframing & Prototyping:</strong> Introduction to Excalidraw and Figma for creating website wireframes and prototypes</li>
+                <li><i class="bi bi-check2 text-success me-2"></i><strong>QR Check-in System:</strong> New timestamped attendance check-in starting next Wednesday at 6pm</li>
+                <li><i class="bi bi-check2 text-success me-2"></i><strong>Course Timeline:</strong> Target to complete Units 1 & 2 by February 21st when Ryan starts</li>
+                <li><i class="bi bi-check2 text-success me-2"></i><strong>Full Page Screenshots:</strong> Learned about GoFullPage Chrome extension for capturing entire webpage designs</li>
+              </ul>
+              <div class="alert alert-info bg-info-subtle text-info-emphasis border-0 small mb-2">
+                <i class="bi bi-lightning-charge-fill me-1"></i>
+                <strong>Deadline:</strong> Complete Bootstrap website and clone a website by end of February (3rd week)
+              </div>
+              <div class="alert alert-secondary bg-secondary-subtle border-0 small mb-3">
+                <i class="bi bi-tools me-1"></i>
+                <strong>Tools Covered:</strong> 
+                <a href="https://excalidraw.com/" target="_blank">Excalidraw</a> • 
+                <a href="https://www.figma.com/" target="_blank">Figma</a> • 
+                <a href="https://www.figma.com/figjam/" target="_blank">FigJam</a> • 
+                <a href="chrome://extensions/?id=fdpohaocaechififmbbbbbknoalclacl">GoFullPage Extension</a> • 
+                <a href="https://www.menti.com/alrtaqejzbi5" target="_blank">Mentimeter Quiz</a>
+              </div>
+              <div class="mt-3">
+                <a href="https://github.com/" class="btn btn-sm btn-dark me-2" target="_blank">
+                  <i class="bi bi-github me-1"></i>GitHub
+                </a>
+                <a href="https://excalidraw.com/" class="btn btn-sm btn-info me-2" target="_blank">
+                  <i class="bi bi-vector-pen me-1"></i>Excalidraw
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 border-0 shadow-sm link-card reveal">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-calendar-event text-primary me-2"></i>Lesson 15 • Next Class</h5>
+              <div class="alert alert-warning bg-warning-subtle text-warning-emphasis border-0 small mb-3">
+                <i class="bi bi-calendar-x me-1"></i>
+                <strong>Holiday Reminder:</strong> No class Monday (public holiday) — Next class is Wednesday!
+              </div>
+              <p class="text-muted small mb-0">Content for next class will be added here soon.</p>
             </div>
           </div>
         </div>
