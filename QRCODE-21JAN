@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>Class Check-In - EQC 25.23</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style type="text/css">
+        :root {
+            --nugget-gold: #F4B942;
+            --sauce-red: #D94F30;
+            --sundae-cream: #FFF8E7;
+            --chocolate-drizzle: #5C3B1E;
+            --cone-brown: #C78C5F;
+            --shadow-gray: #4A4A4A;
+            --background-beige: #FDF1E3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Baloo 2", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background-beige);
+            background: linear-gradient(135deg, var(--sundae-cream) 0%, var(--background-beige) 50%, #FFE4C4 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Playful background decorations */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        body::before {
+            width: 400px;
+            height: 400px;
+            background: var(--nugget-gold);
+            top: -150px;
+            right: -100px;
+        }
+
+        body::after {
+            width: 350px;
+            height: 350px;
+            background: var(--sauce-red);
+            bottom: -100px;
+            left: -80px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 
+                0 8px 32px rgba(212, 79, 48, 0.15),
+                0 4px 16px rgba(244, 185, 66, 0.1);
+            max-width: 600px;
+            width: 100%;
+            padding: 60px 40px;
+            text-align: center;
+            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            z-index: 1;
+            border: 4px solid var(--nugget-gold);
+        }
+
+        @keyframes bounceIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .logo {
+            max-width: 350px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .title {
+            font-family: "Luckiest Guy", system-ui, sans-serif;
+            font-size: 2.5rem;
+            color: var(--sauce-red);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 0px var(--nugget-gold);
+        }
+
+        .qr-code-container {
+            background: linear-gradient(135deg, var(--nugget-gold) 0%, var(--cone-brown) 100%);
+            border-radius: 24px;
+            padding: 30px;
+            margin: 0 auto;
+            display: inline-block;
+            box-shadow: 
+                0 8px 24px rgba(244, 185, 66, 0.4),
+                0 0 0 6px rgba(255, 255, 255, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .qr-code-container::before {
+            content: '👀';
+            position: absolute;
+            top: -30px;
+            right: -20px;
+            font-size: 3rem;
+            animation: wiggle 1s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .qr-code {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 16px;
+            display: inline-block;
+            box-shadow: 
+                inset 0 2px 8px rgba(0, 0, 0, 0.1),
+                0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .qr-code img {
+            display: block;
+            width: 300px;
+            height: 300px;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .scan-text {
+            font-family: "Luckiest Guy", system-ui, sans-serif;
+            font-size: 1.8rem;
+            color: var(--chocolate-drizzle);
+            margin-top: 30px;
+            letter-spacing: 0.02em;
+        }
+
+        .arrow {
+            font-size: 3rem;
+            color: var(--sauce-red);
+            margin: 20px 0;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+            .logo {
+                max-width: 280px;
+            }
+
+            .qr-code img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .scan-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.jotform.com/uploads/EvolveCollege/form_files/EQC-logos-2.67e645329a27e3.39750683.png" 
+             alt="Evolve College Logo" 
+             class="logo">
+        
+        <h1 class="title">Scan to Check In!</h1>
+        
+        <div class="arrow">↓</div>
+        
+        <div class="qr-code-container">
+            <div class="qr-code">
+                <img src="resources/-images/QR CODE.png" 
+                     alt="Class Check-In QR Code">
+            </div>
+        </div>
+        
+        <p class="scan-text">SNACK ATTACK! 🍗</p>
+    </div>
+</body>
+</html> 
